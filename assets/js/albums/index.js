@@ -28,13 +28,13 @@ List = React.createClass({
         });
     },
     render: function () {
-        return <ol query={this.props.query}>
+        return <ul query={this.props.query}>
             <h1>{this.props.query}</h1>
 
             {this.state.posts.map(function (album) {
                 return <Item key={album.id} album={album}/>
             })}
-        </ol>;
+        </ul>;
     }
 });
 

@@ -17,9 +17,9 @@ App = React.createClass({
     },
     render: function () {
         return <div>
-            <input type="text" onChange={this.updateQuery} />
             <div className="container content">
-                <Posts query={this.state.query}/>
+              <input type="text" onChange={this.updateQuery} />
+              <Albums query={this.state.query}/>
             </div>
         </div>;
     }
