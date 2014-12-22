@@ -1,16 +1,25 @@
 var React    = window.React = require('react'), // assign it to window for react chrome extension
 
-    Header   = require('./header'),
-    Posts    = require('./posts'),
+    Albums    = require('./albums'),
 
     App;
 
 App = React.createClass({
+    getInitialState: function() {
+        return {
+            query: 'radiohead'
+        }
+    },
+    updateQuery: function(event) {
+        this.setState({
+            query: event.target.value
+        });
+    },
     render: function () {
         return <div>
-            <Header/>
+            <input type="text" onChange={this.updateQuery} />
             <div className="container content">
-                <Posts/>
+                <Posts query={this.state.query}/>
             </div>
         </div>;
     }

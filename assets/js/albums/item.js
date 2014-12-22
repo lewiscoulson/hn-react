@@ -1,14 +1,13 @@
 var React = require('react'),
 
-    Footer = require('./footer'),
     Item;
 
 Item = React.createClass({
     render: function () {
-        var post = this.props.post;
+        var album = this.props.album;
         return <li>
-            <a href={post.url}>{post.title}</a>
-            <Footer post={post}/>
+          <h2>{album.name}</h2>
+          <img src={album.images[0].url} alt="" />
        </li>;
     }
 });
